@@ -4,7 +4,7 @@ body {
     background: #f7f7f7;
     color: #333;
     line-height: 1.6;
-    overflow: hidden; /* Remove rolagem horizontal */
+    overflow: hidden;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -12,11 +12,11 @@ body {
 
 /* Container do slide */
 .slideshow-container {
+    max-width: 1000px;
     width: 100%;
-    max-width: 1000px; /* Máxima largura para telas maiores */
-    height: 80vh; /* Altura relativa ao viewport */
+    height: 80vh;
     position: relative;
-    margin: 10vh auto; /* Margem vertical para centralização */
+    margin: 10vh auto;
     background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden; /* Oculta qualquer conteúdo fora do container */
 }
 
 /* Logo sempre visível e centralizada */
@@ -38,15 +37,15 @@ body {
 }
 
 .logo {
-    width: 120px; /* Tamanho da logo */
+    width: 120px; /* Aumenta o tamanho da logo */
 }
 
 /* Slides */
 .slide {
     display: none;
-    flex: 1; /* Faz os slides ocuparem o espaço disponível */
-    overflow-y: auto; /* Permite rolagem vertical */
-    text-align: center;
+    padding: 20px;
+    height: 100%;
+    text-align: center; /* Centraliza o texto */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +86,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: block; /* Torna os botões visíveis */
+    display: none; /* Inicialmente ocultos */
 }
 
 .nav-buttons button:hover {
@@ -99,16 +98,18 @@ body {
     max-width: 800px;
     margin: auto;
     text-align: left;
-    margin-top: 0; /* Remove o margin-top para melhor responsividade */
+    margin-top: 120px;
 }
 
-/* Ajusta a margem dos elementos */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin-bottom: 20px;
     color: #333;
 }
 
-p, ul {
+p,
+ul {
     color: #555;
 }
 
@@ -153,10 +154,6 @@ ul li:before {
 
 /* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
-    body {
-        overflow: auto; /* Permite rolagem vertical no corpo para dispositivos menores */
-    }
-
     .slideshow-container {
         width: 90%;
         height: 80vh;
@@ -185,7 +182,6 @@ ul li:before {
         width: 48%;
         margin: 5px 0;
         padding: 10px;
-        font-size: 16px; /* Ajuste o tamanho da fonte dos botões */
     }
 
     .intro h1 {
